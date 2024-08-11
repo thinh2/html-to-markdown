@@ -224,7 +224,7 @@ var multipleNewLinesInLinkRegex = regexp.MustCompile(`(\n\\){1,}`) // `([\n\r\s]
 // EscapeMultiLine deals with multiline content inside a link
 func EscapeMultiLine(content string) string {
 	content = strings.TrimSpace(content)
-	content = strings.Replace(content, "\n", `\`+"\n", -1)
+	content = strings.Replace(content, "\n", "", -1)
 
 	content = multipleNewLinesInLinkRegex.ReplaceAllString(content, "\n\\")
 
